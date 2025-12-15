@@ -4,7 +4,7 @@
 i = 0
 max = 0
 string = ""
-digstring = ""
+numbstring = ""
 
 
 while i != 10:

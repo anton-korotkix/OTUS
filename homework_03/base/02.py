@@ -6,9 +6,10 @@
 def check_digit_input():
     while True:
         s = input("Введите целое число:")
-        if s.isdigit():
-            break
-        else:
+        if s.isalpha() or s.isspace() or s == '':
             print("Попробуйте еще раз, введите целое число")
+            break
+        elif abs(float(s)) % 1 == 0:
+            return "Введено целое число"
             
 check_digit_input()

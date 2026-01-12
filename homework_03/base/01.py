@@ -5,7 +5,6 @@
 
 def numbers(*args, operation):
     if operation == '+':
-        total = 0
         total = sum(args)
     elif operation == '*':
         total = 1
@@ -13,7 +12,6 @@ def numbers(*args, operation):
             total *= i
     else:
         total = "Unsupported operation"
-    print(f"Result: {total}")
+    return total
 
-
-numbers(1,2,3, operation='*')
+numbers(1,4,10, operation='*')

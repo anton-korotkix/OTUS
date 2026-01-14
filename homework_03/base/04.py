@@ -4,13 +4,14 @@
 значения — списки объектов соответствующего типа.
 """
 
-my_list = [False, 1, 'два', 3.4]
+my_list = [True, False, 0, 1, 'два', 3.4]
 
 def list_to_dict(values):
-    keys = []
+    result = {} # создаю пустой словарь
     for i in values: # перебираю все элементы списка
-        keys.append(type(i)) # для каждого значения в новый список записываю тип данных
-    result = dict(zip(keys, values)) # объединяю списки в словарь
+        if type(i) not in result: # если ключ с таким типом данных не найден в словаре
+            result[type(i)] = [] # тогда создаю такой ключ с пустым списком
+        result[type(i)].append(i) # записываю элемент в список по этому ключу
     return result
 
 list_to_dict(my_list)
